@@ -12,7 +12,7 @@ const body = document.querySelector('body');
     roto.classList.add('appear');
     body.classList.add('sunrise');
     roto.load()
-    roto.autoplay;
+    
     ;
   },
   closePadlock = () => {
