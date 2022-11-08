@@ -11,16 +11,13 @@ const body = document.querySelector('body');
   openPadlock = () => {
     roto.classList.add('appear');
     body.classList.add('sunrise');
-    roto.autoplay = true;
-    roto.load();
+    roto.load()
+    roto.autoplay;
+    ;
   },
   closePadlock = () => {
     roto.classList.remove('appear');
     body.classList.remove('sunrise');
-    roto.autoplay = false;
-    roto.load();
-
-
   };
 
   //Start speech recognition
