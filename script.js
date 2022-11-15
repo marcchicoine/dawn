@@ -73,17 +73,17 @@ setInterval(function(){
 console.log (score.innerHTML)
 if (score.innerHTML > 50 && roto.classList.contains('appear')) {
   roto.style.opacity = "1";
-  roto.style.scale = "1";
+  // roto.style.scale = "1";
 
   } 
   else if (score.innerHTML != 0) {
     roto.style.opacity = "0.7";
-    roto.style.scale = "0.4";
+    // roto.style.scale = "0.4";
 
    }
   else {
   roto.style.opacity = ".2";
-  roto.style.scale = "0.4";
+  // roto.style.scale = "0.4";
 
   }
 }, 2000);
