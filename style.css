@@ -1,10 +1,4 @@
-/*
-
-Padlock design inspired by Chris Cacioppe on Dribbble:
-
-https://dribbble.com/shots/4009114-Unlock-Animation
-
-*/
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
 
 *,
 *::before,
@@ -18,17 +12,34 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: "Roboto", Arial, sans-serif;
     font-weight: 700;
     text-align: center;
     color: #eee;
-    background: #192435;
-
+    background: #000;
+    transition: 3s;
+    font-family: 'Bitter', serif;
 }
-
+.foot {
+    margin: 10px;
+    opacity: 0;
+    transition: 2s;
+}
+.tada {
+    opacity: 1;
+    transition: 2s;
+}
+.title {
+    margin: 10px;
+    opacity: 1;
+    transition: 2s;
+}
+.fade {
+    opacity: 0 ;
+    transition: 2s;
+}
 .sunrise {
-    background:#e66465 !important;
-    transition: 10s;
+    background:#000;
+    transition: 3s;
 }
 h1 {
     font-size: 50px;
@@ -48,22 +59,77 @@ h2 {
 
 .heard {
     font-size: 35px;
-    margin-top: 25px;
+    margin: 10px;
 }
 
 .heard-output {
-    color: #e66465;
+    color: #fff;
 }
 
 #roto {
     width: 80vw;
     height:80vh;
-    transition: 2s;
-    opacity:0;
+    transition: 3s;
+    visibility: hidden;
 }
 
 .appear {
-opacity: 1 !important;
+visibility:visible !important;
 transition: 2s;
-
 }
+canvas#motion {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 12vw;
+    height: auto;
+}
+figcaption { 
+position: absolute;
+    right: 0;
+    top: 1vh;
+    width: 200px;
+    text-align: right;
+    margin: 5px;
+}
+canvas {
+	image-rendering: pixelated;
+}
+
+.marquee {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    line-height: 1;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    @keyframes moveLeft {
+        0% { transform:  translateX(0);
+        }
+        100% {
+          transform: translateX(-3000vw);
+        }
+      }
+    .marquee span {
+        /* this is the shorthand animation syntax*/
+        animation: moveLeft 700s infinite ;
+        /*this will keep text on same line*/
+         white-space: nowrap;
+        display: block;
+        /*this will allow the animation*/
+        position: relative;
+      }
+      /*mix blendmode will mix the current layer color with what is behind it */
+      /* .mix-difference {
+          mix-blend-mode: darken;
+      } */
+      .marquee .still  {
+        animation: none;
+
+      }

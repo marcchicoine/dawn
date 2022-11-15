@@ -5,19 +5,35 @@ window.addEventListener("DOMContentLoaded", () => {
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const roto = document.getElementById('roto');
 const body = document.querySelector('body');
+const title = document.querySelector('h2.title')
+const footer = document.querySelector('h3.foot')
+const poem = document.querySelector('.marquee span')
+
   const recognition = new SpeechRecognition(),
   padlock = document.querySelector('.padlock'),
   heardOutput = document.querySelector('.heard-output'),
   openPadlock = () => {
     roto.classList.add('appear');
     body.classList.add('sunrise');
-    roto.load()
-    
-    ;
+    roto.load();
+    roto.autoplay = true;
+    roto.muted = false;
+    title.classList.add('fade');
+    footer.classList.add('tada');
+    poem.style.color = "black";
+    poem.classList.remove('still');
+    makeMarquee();
   },
   closePadlock = () => {
     roto.classList.remove('appear');
     body.classList.remove('sunrise');
+    roto.muted = true;
+    title.classList.remove('fade');
+    footer.classList.remove('tada');
+    poem.classList.remove('mix-difference');
+    poem.style.color = "white";
+    poem.classList.add('still');
+    marqueeoff ();
   };
 
   //Start speech recognition
@@ -33,10 +49,10 @@ const body = document.querySelector('body');
     heardOutput.textContent = transcript;
 
     //Check if transcript is valid
-    if (transcript === 'dawn in new york by claude mckay' ) {
+    if (transcript === 'dawn' ) {
       openPadlock();
     } else {
-      if (transcript === 'and i go darkly rebel to my work' ) {
+      if (transcript === 'dusk' ) {
         closePadlock();
       }
     }
@@ -50,4 +66,26 @@ const body = document.querySelector('body');
   
 });
 
- 
+ //check for movement
+ var score = document.querySelector('span#score')
+//checks score inner html ever 5 seconds
+setInterval(function(){ 
+console.log (score.innerHTML)
+if (score.innerHTML > 50 && roto.classList.contains('appear')) {
+  roto.style.opacity = "1";
+  roto.style.scale = "1";
+
+  } 
+  else if (score.innerHTML != 0) {
+    roto.style.opacity = "0.7";
+    roto.style.scale = "0.4";
+
+   }
+  else {
+  roto.style.opacity = ".2";
+  roto.style.scale = "0.4";
+
+  }
+}, 2000);
+
+
