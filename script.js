@@ -9,7 +9,6 @@ const title = document.querySelector('h2.title');
 const footer = document.querySelector('h3.foot');
 const poem = document.querySelector('.marquee span');
 const rotoaudio = document.getElementById('rotoaudio');
-
   const recognition = new SpeechRecognition();
   padlock = document.querySelector('.padlock');
   heardOutput = document.querySelector('.heard-output');
@@ -78,17 +77,27 @@ const rotoaudio = document.getElementById('rotoaudio');
 //checks score inner html ever 5 seconds
 setInterval(function(){ 
 console.log (score.innerHTML);
+const marqueefilter = document.querySelector('div.marquee');
 if (score.innerHTML > 50 && roto.classList.contains('appear')) {
   roto.style.opacity = "1";
+  // roto.style.filter = "url(#filter) blur(0px)";
+  marqueefilter.style.filter = "url(#filter) blur(0px)";
+  
   // roto.style.scale = "1";
   } 
   else if (score.innerHTML != 0) {
     roto.style.opacity = "0.7";
     // roto.style.scale = "0.4";
+    // roto.style.filter = "url(#filter) blur(3px)";
+    marqueefilter.style.filter = "url(#filter) blur(1.5px)";
    }
   else {
   roto.style.opacity = "0.2";
   // roto.style.scale = "0.4";
+  // roto.style.filter = "url(#filter) blur(6px)";
+
+  marqueefilter.style.filter = "url(#filter) blur(3px)";
+
   }
 }, 2000);
 

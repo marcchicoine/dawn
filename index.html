@@ -19,7 +19,7 @@ Please close any other tabs/windows containing speech API projects, even if only
 
 -->
 <h2 class="title">
-  Welcome, to begin, say dawn or touch the sun
+  Welcome, to begin, say dawn 
 </h2>
 <figure>
   <canvas id="motion"></canvas>
@@ -46,10 +46,19 @@ Please close any other tabs/windows containing speech API projects, even if only
     <div class="keyhole"></div>
 </div>
 <h3 class="foot">
-  To End the poem, say: Dusk or touch the moon
+  To End the poem, say: Dusk
 </h2>
 <p class="heard">Heard: <span class="heard-output">nothing</span></p>
 
+
+<svg class="svg" xmlns="http://www.w3.org/2000/svg">
+  <filter id="filter">
+    <feTurbulence type="turbulence" baseFrequency="0" id="turbulence" numOctaves="1" result="turbulence" seed="5">
+      <animate id="noiseAnimate" attributeName="baseFrequency" values="0.02; 0.04; 0.02" calcMode="spline" keySplines="0.42 0.0 0.58 1.0;0.42 0.0 0.58 1.0" dur="15s" repeatCount="indefinite"></animate>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="B"></feDisplacementMap>
+  </filter>
+</svg>
 <!-- partial -->
 <script src="adaptor.js"></script>
 <script src="./diff-cam-engine.js"></script>

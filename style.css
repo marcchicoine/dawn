@@ -86,6 +86,7 @@ h2 {
     top: 0;
     z-index: -101;
     opacity: 0;
+    transition: 2s;
 }
 #rotoaudio {
     transition: 3s;
@@ -128,6 +129,8 @@ canvas {
     line-height: 1;
       overflow: hidden;
       z-index: 10;
+      filter: url(#filter) blur(3px) contrast(10);
+      transition: 1s;
     }
 
     @keyframes moveLeft {
