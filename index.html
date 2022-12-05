@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dawn In New York, an Interactive Poem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="p51.js"></script>
+<script src="p5add.js"></script>
+<script src="ml5.js"></script>
+
+</head>
+<body class="body">
+<!-- 
+
+Please enable your microphone.
+
+Please close any other tabs/windows containing speech API projects, even if only showing the preview window. 
+
+-->
+<h2 class="title">
+  Welcome, to begin, say dawn or touch the sun
+</h2>
+<figure>
+  <canvas id="motion"></canvas>
+  <figcaption id="caption">
+    Movement<br>
+     <span id="score">?</span>
+  </figcaption>
+</figure>
+
+<div class="marquee mix-difference">
+  <!-- here we add the title in multiple repeating times using javascript huzzAH-->
+  <span class="still">Dawn In NY by Claude McKay</span>
+</div>
+<iframe id="roto" src="https://www.youtube.com/embed/dteGxAdkBpA?controls=0&autoplay=1&rel=0" width="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+
+</iframe>
+
+<!-- <video id= "roto">
+  <source src="rotosound.mp4" type="video/mp4">
+</video> -->
+<audio id ="rotoaudio" style="width:0;">
+  <source src="dawn2.m4a" type="audio/mp4" />
+  </audio>
+<div class="padlock">
+    <div class="keyhole"></div>
+</div>
+<h3 class="foot">
+  To End the poem, say: Dusk or touch the moon
+</h2>
+<p class="heard">Heard: <span class="heard-output">nothing</span></p>
+
+<!-- partial -->
+<script src="adaptor.js"></script>
+<script src="./diff-cam-engine.js"></script>
+  <script  src="./video.js"></script>
+  <script  src="./script.js"></script>
+  <script  src="./title.js"></script>
+<!-- <script src="bodypix.js"></script> -->
+
+</body>
+</html>

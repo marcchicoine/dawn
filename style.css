@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-weight: 700;
+    text-align: center;
+    color: #eee;
+    background: #000;
+    transition: 3s;
+    font-family: 'Bitter', serif;
+}
+.foot {
+    margin: 10px;
+    opacity: 0;
+    transition: 2s;
+    position: absolute;
+    top: 40px;
+    z-index: 1000;
+}
+.tada {
+    opacity: 1;
+    transition: 2s;
+}
+.title {
+    margin: 10px;
+    opacity: 1;
+    transition: 2s;
+    position: absolute;
+    top: 40px;
+    z-index: 1000;
+}
+.fade {
+    opacity: 0 ;
+    transition: 2s;
+}
+.sunrise {
+    background:#000;
+    transition: 3s;
+}
+h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+h1 span {
+    font-size: 52px;
+    color: #77e7ad;
+}
+
+h2 {
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.heard {
+    font-size: 35px;
+    margin: 10px;
+    position: absolute;
+    bottom: 10px;
+    z-index: 1000;
+
+}
+
+.heard-output {
+    color: #fff;
+}
+
+#roto {
+    width: 100vw;
+    height:100vh;
+    transition: 3s;
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: -101;
+    opacity: 0;
+}
+#rotoaudio {
+    transition: 3s;
+    visibility: hidden;
+
+}
+.appear {
+visibility:visible !important;
+transition: 2s;
+display: block !important;
+opacity: 1;
+}
+canvas#motion {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 12vw;
+    height: auto;
+}
+figcaption { 
+position: absolute;
+    right: 0;
+    top: 1vh;
+    width: 200px;
+    text-align: right;
+    margin: 5px;
+}
+canvas {
+	image-rendering: pixelated;
+}
+
+.marquee {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    width: 100%;
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    line-height: 1;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    @keyframes moveLeft {
+        0% { transform:  translateX(0);
+        }
+        100% {
+          transform: translateX(-5000vw);
+        }
+      }
+    .marquee span {
+        /* this is the shorthand animation syntax*/
+        animation: moveLeft 600s infinite ;
+        /*this will keep text on same line*/
+         white-space: nowrap;
+        display: block;
+        /*this will allow the animation*/
+        position: relative;
+        color: #fff !important;
+       
+      }
+      .marquee .still  {
+        animation: none;
+
+      }
+
+      .p5Canvas {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: absolute !important;
+        top:0;
+        z-index: 100;
+        mix-blend-mode: darken;
+    }
+
+    figure {
+        position: absolute;
+        z-index: 101;
+     top: 40px;
+     right: 40px;
+        color: #fff !important ;
+    }
+   
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    
+    .btn-default {
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+    }
+    
+   
+    .specific{
+    	background-color: #fff;
+    }
